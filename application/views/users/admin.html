@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>管理员页面</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('img[class="exit"]').click(function(){
+					window.location='http://www.lyb.com/index.php/Leaves/doLogout'
+				})
+			})
+	</script>
+</head>
+<body>
+	<table border="1" width="600" align="center">
+	<caption><h2>留言管理</h2></caption>
+	<tr bgcolor="#dddddd>"><th>id</th><th>标题</th><th>内容</th><th>时间</th><th>uid</th><th>查看</th><th>删除</th><th>通过</th></tr>
+		<?php foreach ($result as $vo):?>
+			<tr>
+    			<?php foreach ($vo as $row):?>
+
+        			<?php echo '<td>'.$row.'</td>';?>
+
+    			<?php endforeach;?>
+
+    			<td><a href="http://www.lyb.com/index.php/Admin/read?id=<?php echo $vo->id; ?>">查看</a></td>
+    			<td><a href="http://www.lyb.com/index.php/Admin/delete?id=<?php echo $vo->id; ?>">删除</a></td>
+    			<td><a href="http://www.lyb.com/index.php/Admin/pass?id=<?php echo $vo->id; ?>">通过</a></td>
+ 			</tr>
+		<?php endforeach;?>
+	</table>
+	<img src="http://www.lyb.com/images/exit.png" class="exit">
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>查看单条记录</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('img[class="return"]').click(function(){
+					window.location='http://www.lyb.com/index.php/Admin/admin'
+				});
+				$('img[class="exit"]').click(function(){
+					window.location='http://www.lyb.com/index.php/Leaves/doLogout'
+				})
+			})
+	</script>
+</head>
+<body>
+	标题：
+	<?php echo $title;?><br/>
+	内容：
+	<?php echo $content;?><br/>
+</body>
+	<img src="http://www.lyb.com/images/return.png" class="return">
+	<img src="http://www.lyb.com/images/exit.png" class="exit">
+</html>

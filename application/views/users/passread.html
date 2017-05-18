@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>查看单条记录</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('img[class="return"]').click(function(){
+					window.location='http://www.lyb.com/index.php/Users/users'
+				});
+				$('img[class="exit"]').click(function(){
+					window.location='http://www.lyb.com/index.php/Leaves/doLogout'
+				})
+			})
+	</script>
+</head>
+<body>
+	标题：
+	<?php echo $title;?><br/>
+	内容：
+	<?php echo $content;?><br/>
+	留言人：
+	<?php echo $username;?><br/>
+	留言时间：
+	<?php   $date=date_create();
+			date_timestamp_set($date,$time);
+			echo date_format($date,"Y-m-d H:i:s");?><br/>
+</body>
+	<img src="http://www.lyb.com/images/return.png" class="return">
+	<img src="http://www.lyb.com/images/exit.png" class="exit">
+</html>

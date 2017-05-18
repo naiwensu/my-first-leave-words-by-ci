@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登陆页面</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+		<form action="/index.php/Leaves/doLogin" method="post">
+			姓&nbsp;&nbsp;名：<input type="text" name="username"><br/>
+			密&nbsp;&nbsp;码：<input type="password" name="password"><br/>
+			验证码：
+			<input type="text" name="code">
+
+			<img id="Imageid" src="http://www.lyb.com/captcha/<?php echo($filename); ?>" />
+			<br/>
+			<button>登陆</button>
+			<img src="http://www.lyb.com/images/register.gif" class="register" />
+			
+<script>
+$('#Imageid').on('click', function(){
+	$.get({
+  url: '/index.php/Leaves/getCap',
+  success: function(res) {
+  	$('#Imageid').attr('src','http://www.lyb.com/captcha/'+res);
+  }
+})
+})
+
+$(function(){
+				
+				$('img[class="register"]').click(function(){
+					window.location='http://www.lyb.com/index.php/Register/reg'
+				})
+			})
+</script>
+		</form>
+</body>
+</html>
